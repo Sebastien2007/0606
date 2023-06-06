@@ -7,8 +7,15 @@ with open('param.txt') as f:
     K = eval(f.readline())
     D = eval(f.readline())
 
+def create_picture():
+    window = np.zeros((500,1000,3), dtype='uint8')
+    cv2.circle(window, (500,500), 100, (125, 125, 0), thickness=-11)
+    cv2.circle(window, (500,500), 500, (20, 75, 9), thickness=1)
+    #cv2.rectangle(window,(500-143), 100, (100, 300), (255,255,255), 5)
+    return window
 
 
+    
 def crop_img(img):
     cropped_image = img[0:480, 90:550]
     return cropped_image
